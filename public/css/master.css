@@ -1,0 +1,49 @@
+/* public/css/master.css */
+body {
+    font-family: 'ZCOOL KuaiLe', cursive;
+  }
+.ellipsis{
+    display: block;
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  .sidebar_fixed {
+    position: sticky;
+    top: 100px;
+  }
+  .sidebar_content {
+    margin-bottom: 50px;
+  }
+
+  .board-table{
+    table-layout:fixed;
+}
+
+.post-body{
+  white-space: pre-line;
+  font-size: 0.8em;
+}
+
+.board-table .date{
+    width:100px;
+}
+
+.board-table .category{
+  width:200px;
+}
+
+.date-data{
+  font-size: 0.8em;
+}
+
+.post-category-list{
+  height: 2.5em;
+  
+}
+
+#category, #txt_other_category{
+  width:30%;
+}
+

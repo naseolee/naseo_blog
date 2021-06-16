@@ -1,0 +1,10 @@
+<div class="card sidebar_fixed">
+    <div class="card-header" style="background-color:#E9ECEF; color:#495057; font-weight:bold;">Category</div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item ellipsis"><a href="/posts">all</a></li>
+        <% categoriesName.forEach((category) => { %>
+            <li class="list-group-item nav-link ellipsis"><a href="/posts?category_name=<%= category %>" name="saved_categories"><%= category %></a></li>
+        <% }) %>    
+        
+    </ul>
+</div>
