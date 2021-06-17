@@ -46,17 +46,19 @@ router.post('/', (req, res) => {
 
 //Show
 router.get('/:id', (req, res) => {
+    let categoriesName = req.query.categories;
     Post.findOne({ _id: req.params.id }, (err, post) => {
         if (err) return res.json(err);
-        res.render('posts/show', { post: post });
+        res.render('posts/show', { post: post , categoriesName:categoriesName});
     });
 });
 
 //Edit
 router.get('/:id/edit', (req, res) => {
+    let categories = util.commaSplit(req.query.categories);
     Post.findOne({ _id: req.params.id }, (err, post) => {
         if (err) return res.json(err);
-        res.render('posts/edit', { post: post });
+        res.render('posts/edit', { post: post, categories:categories});
     });
 });
 

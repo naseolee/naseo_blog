@@ -68,24 +68,58 @@ function ifCategoryIsOther() {
    }
 }
 
-function clickSearch(){
-    let categoryHtml = document.getElementsByName('saved_categories');
+function getCategories(){
+    let categoriesHtml = document.getElementsByName('saved_categories');
     let categoriesArr = [];
-    Array.prototype.slice.call(categoryHtml).forEach(val => {
-        categoriesArr.push(val.innerHTML);
+    Array.prototype.slice.call(categoriesHtml).forEach(categoryHtml => {
+        categoriesArr.push(categoryHtml.innerHTML);
     });
 
-    //hidden category
-    let categories = document.createElement('input');
-    categories.setAttribute("type","hidden");
-    categories.setAttribute("id","hid_categories");
-    categories.setAttribute("name","hid_categories");
-    categories.setAttribute("value",categoriesArr);
-    document.body.querySelector('.search-form').children.item(0).before(categories);
+    return categoriesArr;
+}
+
+function getHiddenCate(){
+    let categoriesArr = getCategories();
+    let reqCategories = document.createElement('input');
+    reqCategories.setAttribute("type","hidden");
+    reqCategories.setAttribute("id","hid_categories");
+    reqCategories.setAttribute("name","hid_categories");
+    reqCategories.setAttribute("value",categoriesArr);
+
+    return reqCategories;
+}
+
+function clickSearch(){
+    let reqHiddenCategories = getHiddenCate();
+    
+    //set request parameter
+    document.body.querySelector('.search-form').children.item(0).before(reqHiddenCategories);
     
     //set method
     document.body.querySelector('.search-form').setAttribute("method","post");
     document.body.querySelector('.search-form').setAttribute("action","/posts?_method=search");
     
     document.search_form.submit();
+}
+
+
+function clickPost(clickedTag){
+    let reqCategories = getCategories(document);
+    clickedTag.href = clickedTag.href + '?categories=' + reqCategories;
+}
+
+function clickEditView(clickedTag){
+    let reqCategories = document.querySelector('#categories_name').value;
+    clickedTag.href = clickedTag.href + '?categories=' + reqCategories;
+}
+
+function fromEditToShow(clickedTag){
+    let categoryOptions = document.querySelector('#category').options;
+    let arrCategories = [];
+    for(let i = 0; i < categoryOptions.length;i++){
+        let option = categoryOptions[i].value;
+        if(option !== 'other' && option !== '') arrCategories.push(option);
+    }
+    let reqCategories = arrCategories.join(',');
+    clickedTag.href = clickedTag.href + '?categories=' + reqCategories;
 }

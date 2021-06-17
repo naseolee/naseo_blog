@@ -9,7 +9,7 @@ util.uniq = (array) => {
 };
 
 util.commaSplit = (str) =>{
-  return str.split(',');
+  return str ? str.split(',') : [];
 };
 
 util.plusSplit = (str) =>{

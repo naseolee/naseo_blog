@@ -34,7 +34,7 @@
                                     <% posts.forEach((post)=> { %>
                                         <tr>
                                             <td>
-                                                <a href="/posts/<%= post._id %>">
+                                                <a href="/posts/<%= post._id %>" name="post_names" onclick="clickPost(this);">
                                                     <div class="ellipsis">
                                                         <%= post.title %>
                                                     </div>

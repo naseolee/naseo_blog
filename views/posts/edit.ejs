@@ -10,19 +10,32 @@
     <%- include('../partials/nav') %>
 
         <div class="container mb-3">
-            <!--
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-1 pl-2 pr-2">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/posts">Board</a></li>
+                    <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
                     <li class="breadcrumb-item"><a href="/posts/<%= post._id %>">
                             <%= post.title %>
                         </a></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit Post</li>
                 </ol>
             </nav>
-            -->
+            
             <form action="/posts/<%= post._id %>?_method=put" method="post">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" name="category" id="category" onchange="ifCategoryIsOther()">
+                        <option value=""></option>
+                        <% if(categories.length > 0) {categories.forEach((category)=> { %>
+                            <%if(post.category !== category){ %>
+                            <option value="<%= category %>"><%= category %></option>
+                        <% }else{ %>
+                            <option value="<%= category %>"selected><%= category %></option>
+                        <% }})} %>
+                        <option value="other">other</option>
+                    </select>
+                </div>
+                
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" id="title" name="title" value="<%= post.title %>" class="form-control">
@@ -35,7 +48,7 @@
 
                 <div>
                     <button class="btn btn-primary" type="submit">Edit</button>
-                    <a class="btn btn-primary" href="/posts/<%= post._id %>">Back</a>
+                    <a class="btn btn-primary" href="/posts/<%= post._id %>" onclick="fromEditToShow(this);">Back</a>
                 </div>
 
 
