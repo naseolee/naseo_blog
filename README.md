@@ -11,3 +11,7 @@
 
 ### Post
 ![image description](https://1.bp.blogspot.com/-WzrytD1bq6Y/YMsQHa3w9bI/AAAAAAAABKE/aouCob6JELcS0pI6y3mXM6Nel5HuIWxUACLcBGAsYHQ/w400-h183/post.png)
+
+### Slide training
+![image description](https://1.bp.blogspot.com/-N38HqBRk5Vc/YMw9aDZcfJI/AAAAAAAABKQ/DvSKfDZvd8Mhx1FQ-NE-h1kCLoHeVa1lwCLcBGAsYHQ/s320/slide.gif)
+Reference URL : https://webparts.cman.jp/
