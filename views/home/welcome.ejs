@@ -2,50 +2,59 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <%- include('../partials/head') %>
-  </head>
-  <body>
-    <%- include('../partials/nav') %>
 
-    
+<head>
+  <%- include('../partials/head') %>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+      $(document).ready(function () {
+        $('.slider').slider();
+      });
+    </script>
+</head>
+
+<body>
+  <%- include('../partials/nav') %>
     <div class="container mb-3">
       <div class="jumbotron pt-4 pb-4 pr-4 pl-4">
         <h1>Naseo'S blog</h1>
         <p>2021-06-01</p>
       </div>
-  
-      
-       <div class="slider">
-          <ul class="slides">
-            <li>
-              <img src="img/1.jpg">
-              <div class="caption center-align">
-                <h3>Welcome to my blog</h3>
-              </div>
-            </li>
-            <li>
-              <img src="img/2.jpg"> 
-              <div class="caption left-align">
-                <h3>Dream</h3>
-                <h3>Come</h3>
-                <h3>True</h3>
-              </div>
-            </li>
-            <li>
-              <img src="img/3.jpg">
-              <div class="caption right-align">
-                <h3>Enjoy</h3>
-                <h3>Your</h3>
-                <h3>Life!</h3>
-              </div>
-            </li>
-          </ul>
-        </div>
-      
-      
-      
-      
+
+
+      <div class="slider">
+        <ul class="slides">
+          <li>
+            <img src="img/1.jpg">
+            <div class="caption center-align">
+              <h3>Welcome to my blog</h3>
+            </div>
+          </li>
+          <li>
+            <img src="img/2.jpg">
+            <div class="caption left-align">
+              <h3>Dreams</h3>
+              <h3>Come</h3>
+              <h3>True</h3>
+            </div>
+          </li>
+          <li>
+            <img src="img/3.jpg">
+            <div class="caption right-align">
+              <h3>Enjoy</h3>
+              <h3>Your</h3>
+              <h3>Life!</h3>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+
+
     </div>
-  </body>
-</html> 
+</body>
+
+</html>

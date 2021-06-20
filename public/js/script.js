@@ -1,11 +1,20 @@
 // public/js/script.js
 'use strict'
 
-$(document).ready(function () {
-    $('.slider').slider();
-});
+
 
 $(() => {
+
+
+    $('.inner_title').mouseenter(function(event){
+        let desc = ($(event.currentTarget).parent().parent().parent().find('dd').clone()).html();
+        $(event.currentTarget).parent().append('<dd class="description">' + desc + '</dd">');
+    });
+    $('.inner_title').mouseleave(function(event){
+        $(event.currentTarget).parent().find('dd').remove();
+    });
+
+
     function get2digits(num) {
         return ('0' + num).slice(-2);
     }
