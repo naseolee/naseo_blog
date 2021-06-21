@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
         posts.forEach(post => {
             categoriesName.push(post.category);
 
-            post.body = post.body.substring(0, 20) + "...";
+            post.body = post.body.substring(0, 100);
         });
         categoriesName = util.uniq(categoriesName).sort();
         //List

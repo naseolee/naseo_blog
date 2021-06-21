@@ -6,12 +6,11 @@
 $(() => {
 
 
-    $('.inner_title').mouseenter(function(event){
-        let desc = ($(event.currentTarget).parent().parent().parent().find('dd').clone()).html();
-        $(event.currentTarget).parent().append('<dd class="description">' + desc + '</dd">');
+    $('.preview').mouseenter(function(event){
+        $(event.currentTarget).parent().parent().parent().find('dd').removeClass('d-none').addClass('ellipsis');
     });
-    $('.inner_title').mouseleave(function(event){
-        $(event.currentTarget).parent().find('dd').remove();
+    $('.preview').mouseleave(function(event){
+        $(event.currentTarget).parent().parent().parent().find('dd').addClass('d-none');
     });
 
 

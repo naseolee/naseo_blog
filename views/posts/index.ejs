@@ -38,12 +38,13 @@
                                                 <a href="/posts/<%= post._id %>" name="post_names"
                                                     onclick="clickPost(this);">
                                                     <div class="ellipsis">
-                                                        <dt class="inner_title">
-                                                            <%= post.title %>
-                                                        </dt>
+                                                        <span class="preview"><img src="img/preview.png" alt="preview" class="preview-img"></span>
+                                                        <label class="inner-title"><%= post.title %></label>
                                                     </div>
                                                 </a>
-                                                <dd class="description d-none"><%= post.body %></dd>
+                                                <dd class="description d-none" style="text-align: center;">
+                                                    <%= post.body %>
+                                                </dd>
                                             </dl>
                                         </td>
                                         <td class="ellipsis">
