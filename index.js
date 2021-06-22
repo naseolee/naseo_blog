@@ -34,6 +34,7 @@ app.use(methodOverride('_method'));
 //Routes
 app.use('/',require('./routes/home'));
 app.use('/posts',require('./routes/posts'));
+app.use('/login',require('./routes/login'));
 
 //Port setting
 let port = process.env.local_port;
