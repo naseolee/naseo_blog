@@ -9,7 +9,8 @@
 
 <body>
     <%- include('../partials/nav') %>
-        <div class="container mb-3">
+        <div class="container mb-3 w-25 p-1 align-self-center">
+            <form action="/login" method="post" class="form">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" value="" placeholder="Email" class="form-control">
@@ -17,9 +18,12 @@
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input typle="password" id="password" name="password" placeholder="Password" class="form-control">
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control">
             </div>
+                 <button class="btn btn-primary p-2 float-right" type="submit">Login</button>
+            </form>
         </div>
+        
 </body>
 
 </html>
